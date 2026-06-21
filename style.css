@@ -96,13 +96,13 @@ a { color: inherit; }
 
 .hero__name {
   font-family: var(--display);
-  font-weight: 900;
+  font-weight: 700;
   font-size: clamp(3.5rem, 12vw, 9rem);
   line-height: 0.95;
-  letter-spacing: -0.03em;
+  letter-spacing: -0.02em;
   opacity: 0;
   animation: rise 0.9s ease forwards;
-  animation-delay: 0.25s;
+  animation-delay: 0.1s;
 }
 
 .hero__role {
@@ -110,20 +110,10 @@ a { color: inherit; }
   font-weight: 500;
   font-size: clamp(1.1rem, 2.5vw, 1.6rem);
   color: var(--text-dim);
-  margin-top: 12px;
+  margin-top: 16px;
   opacity: 0;
   animation: rise 0.9s ease forwards;
-  animation-delay: 0.4s;
-}
-
-.hero__tagline {
-  max-width: 540px;
-  font-size: clamp(1rem, 1.6vw, 1.25rem);
-  margin-top: 28px;
-  color: var(--text);
-  opacity: 0;
-  animation: rise 0.9s ease forwards;
-  animation-delay: 0.55s;
+  animation-delay: 0.25s;
 }
 
 @keyframes rise {
@@ -264,7 +254,7 @@ a { color: inherit; }
 
 .project__text h2 {
   font-family: var(--display);
-  font-weight: 800;
+  font-weight: 600;
   font-size: clamp(1.8rem, 3.5vw, 2.6rem);
   letter-spacing: -0.01em;
   margin-bottom: 20px;
@@ -349,47 +339,22 @@ a { color: inherit; }
   letter-spacing: 0.02em;
 }
 
-/* ===== Contact ===== */
-.contact {
-  padding: 180px 48px;
+/* ===== Footer ===== */
+.footer {
+  padding: 64px 48px 32px;
   text-align: center;
+  font-family: var(--display);
   border-top: 1px solid var(--rule);
 }
 
-.contact__kicker {
-  font-family: var(--display);
-  font-size: 0.8rem;
-  font-weight: 600;
-  letter-spacing: 0.06em;
-  text-transform: uppercase;
-  color: var(--accent);
-  margin-bottom: 28px;
+.footer__links {
+  display: flex;
+  justify-content: center;
+  gap: 24px;
+  margin-bottom: 16px;
 }
 
-.contact__headline {
-  font-family: var(--display);
-  font-weight: 800;
-  font-size: clamp(2rem, 5vw, 3.6rem);
-  letter-spacing: -0.02em;
-  line-height: 1.15;
-  margin-bottom: 48px;
-}
-
-.contact__primary {
-  font-family: var(--display);
-  font-size: clamp(1.2rem, 2.5vw, 1.6rem);
-  font-weight: 600;
-  text-decoration: none;
-  border-bottom: 2px solid var(--accent);
-  padding-bottom: 4px;
-}
-
-.contact__secondary {
-  margin-top: 28px;
-}
-
-.contact__secondary a {
-  font-family: var(--display);
+.footer__links a {
   font-size: 0.9rem;
   font-weight: 500;
   color: var(--text-dim);
@@ -397,14 +362,9 @@ a { color: inherit; }
   border-bottom: 1px solid var(--rule);
 }
 
-/* ===== Footer ===== */
-.footer {
-  padding: 32px 48px;
-  text-align: center;
-  font-family: var(--display);
+.footer p {
   font-size: 0.8rem;
   color: var(--text-dim);
-  border-top: 1px solid var(--rule);
 }
 
 /* ===== Responsive ===== */
