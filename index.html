@@ -1,68 +1,190 @@
-/* ===== Tokens ===== */
-:root {
-  --bg: #0a0a0a;
-  --bg-raised: #121212;
-  --text: #f5f5f0;
-  --text-dim: #9a9a94;
-  --accent: #5b7c99;
-  --rule: rgba(245, 245, 240, 0.1);
-  --display: "Inter", -apple-system, sans-serif;
-  --body: "Source Serif 4", Georgia, serif;
-  --mono: "Inter", sans-serif;
-}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Gavin Block — Mechanical Engineer</title>
+<meta name="description" content="Gavin Block — Mechanical Engineer. HVAC design, mechanical design, and hands-on builds.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800;900&family=Source+Serif+4:opsz,wght@8..60,400;8..60,500&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="style.css">
+<script type="module" src="https://ajax.googleapis.com/ajax/libs/model-viewer/4.0.0/model-viewer.min.js"></script>
+</head>
+<body>
 
-* { margin: 0; padding: 0; box-sizing: border-box; }
+<nav class="nav" id="nav">
+  <a href="#top" class="nav__name">GB</a>
+  <div class="nav__links">
+    <a href="#about">About</a>
+    <a href="#work">Work</a>
+    <a href="#builds">Builds</a>
+  </div>
+</nav>
 
-html { scroll-behavior: smooth; }
+<!-- HERO -->
+<header class="hero" id="top">
+  <h1 class="hero__name">Gavin Block</h1>
+  <p class="hero__role">Mechanical engineer. Maker. Building things on purpose.</p>
+  <a href="#work" class="hero__scroll" aria-label="Scroll to work">
+    <span></span>
+  </a>
+</header>
 
-body {
-  background: var(--bg);
-  color: var(--text);
-  font-family: var(--body);
-  line-height: 1.6;
-  -webkit-font-smoothing: antialiased;
-}
+<!-- ABOUT -->
+<section class="about" id="about">
+  <div class="about__inner">
+    <p class="about__kicker">About</p>
+    <p class="about__lead">
+      I'm a mechanical engineer at LaBella Associates in Rochester, NY, where I design HVAC systems
+      for K-12 schools — load calcs, equipment selection, ductwork, and the unglamorous work of
+      keeping buildings comfortable and code-compliant.
+    </p>
+    <p class="about__body">
+      I grew up in Alaska. I interned with CRW Engineering Group in Anchorage a while back, and
+      this site is mostly just a place to put the stuff I build when I'm not at a desk.
+    </p>
+    <p class="about__body">
+      CAD-designed hardware, a self-hosted media server, a car infotainment system built from a
+      Raspberry Pi and an OBD2 dongle, and a robot that draws on an Etch A Sketch.
+    </p>
+    <div class="about__tools">
+      <span>Revit</span><span>AutoCAD MEP</span><span>Carrier HAP</span><span>Trane TRACE</span>
+      <span>Fusion 360</span><span>Python</span>
+    </div>
+  </div>
+</section>
 
-a { color: inherit; }
+<!-- WORK / PROJECTS -->
+<section class="work" id="work">
 
-:focus-visible {
-  outline: 2px solid var(--accent);
-  outline-offset: 4px;
-}
+  <article class="project">
+    <div class="project__viewer">
+      <model-viewer
+        src="/_pages/test.glb"
+        environment-image="/_pages/aircraft_workshop_01_1k.hdr"
+        alt="Modular Hydroponic Tower CAD model"
+        camera-controls
+        touch-action="pan-y"
+        shadow-intensity="1"
+        auto-rotate
+        auto-rotate-delay="2000">
+      </model-viewer>
+    </div>
+    <div class="project__text">
+      <p class="project__index">01</p>
+      <h2>Modular Hydroponic Tower</h2>
+      <p class="project__desc">
+        A stackable, vertical growing system designed to maximize plant density per square foot
+        of footprint. Each module nests onto the one below it, so the tower scales up without
+        redesigning the base. <!-- TODO: Gavin — fill in real specifics: materials, irrigation method, why you built it --></p>
+      <p class="project__meta">Fusion 360 · 3D printed</p>
+    </div>
+  </article>
 
-@media (prefers-reduced-motion: reduce) {
-  * { animation: none !important; transition: none !important; scroll-behavior: auto !important; }
-}
+  <article class="project project--reverse">
+    <div class="project__viewer">
+      <model-viewer
+        src="/_pages/lamp1.glb"
+        environment-image="/_pages/aircraft_workshop_01_1k.hdr"
+        alt="Articulating Lamp CAD model"
+        camera-controls
+        touch-action="pan-y"
+        shadow-intensity="1"
+        auto-rotate
+        auto-rotate-delay="2000">
+      </model-viewer>
+    </div>
+    <div class="project__text">
+      <p class="project__index">02</p>
+      <h2>Articulating Lamp</h2>
+      <p class="project__desc">
+        A desk lamp built around a friction-jointed arm that holds any pose without a locking
+        mechanism. The design problem was entirely in the joints — getting enough resistance to
+        hold position under the lamp head's weight without making the arm stiff to move.
+        <!-- TODO: Gavin — fill in real specifics: joint mechanism, materials, design iterations --></p>
+      <p class="project__meta">Fusion 360 · 3D printed</p>
+    </div>
+  </article>
 
-/* ===== Nav ===== */
-.nav {
-  position: fixed;
-  top: 0; left: 0; right: 0;
-  z-index: 100;
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-  padding: 28px 48px;
-  font-family: var(--display);
-  mix-blend-mode: difference;
-}
+  <article class="project">
+    <div class="project__viewer">
+      <model-viewer
+        src="/_pages/beercancooler.glb"
+        environment-image="/_pages/aircraft_workshop_01_1k.hdr"
+        alt="Rapid Drink Can Cooler CAD model"
+        camera-controls
+        touch-action="pan-y"
+        shadow-intensity="1"
+        auto-rotate
+        auto-rotate-delay="2000">
+      </model-viewer>
+    </div>
+    <div class="project__text">
+      <p class="project__index">03</p>
+      <h2>Rapid Drink Can Cooler</h2>
+      <p class="project__desc">
+        A mechanical answer to a warm drink: a device built to pull heat out of a can far faster
+        than a refrigerator or ice bath. <!-- TODO: Gavin — fill in real specifics: how it actually
+        cools, what made it "rapid," what you'd change next time --></p>
+      <p class="project__meta">Fusion 360 · 3D printed</p>
+    </div>
+  </article>
 
-.nav__name {
-  font-weight: 800;
-  font-size: 1.1rem;
-  text-decoration: none;
-  letter-spacing: -0.02em;
-}
+</section>
 
-.nav__links {
-  display: flex;
-  gap: 32px;
-}
+<!-- BUILDS / MAKER PROJECTS -->
+<section class="builds" id="builds">
+  <p class="builds__kicker">Also building</p>
+  <div class="builds__grid">
 
-.nav__links a {
-  text-decoration: none;
-  font-size: 0.85rem;
-  font-weight: 500;
+    <div class="build">
+      <p class="build__index">04</p>
+      <h3>Etch A Sketch Robot</h3>
+      <p>
+        A two-axis CNC built from NEMA 17 steppers and GRBL firmware that draws any image onto a
+        real Etch A Sketch. The hard part wasn't the hardware — it was the pathfinding: routing the
+        pen through every dark pixel without ever crossing open space, since there's no way to
+        "lift the pen" on a real Etch A Sketch.
+      </p>
+      <p class="build__meta">Arduino · GRBL · Python · PyQt6</p>
+    </div>
+
+    <div class="build">
+      <p class="build__index">05</p>
+      <h3>Self-Hosted Music Server</h3>
+      <p>
+        A Raspberry Pi running Jellyfin over a personal music library, accessible from anywhere
+        over Tailscale. Built a small FastAPI tool on top to search and pull new tracks straight
+        into the library from the phone.
+      </p>
+      <p class="build__meta">Raspberry Pi · Docker · Jellyfin</p>
+    </div>
+
+    <div class="build">
+      <p class="build__index">06</p>
+      <h3>Car Infotainment Pi</h3>
+      <p>
+        A Raspberry Pi mounted in the dash reading live engine data over Bluetooth from an OBD2
+        dongle, with a touchscreen kiosk interface for music and vehicle stats.
+      </p>
+      <p class="build__meta">Raspberry Pi · BlueZ · WebSockets</p>
+    </div>
+
+  </div>
+</section>
+
+<footer class="footer">
+  <div class="footer__links">
+    <a href="mailto:gavin.blockk@gmail.com">gavin.blockk@gmail.com</a>
+    <a href="/resume.pdf">Resume</a>
+  </div>
+  <p>&copy; 2026 Gavin Block</p>
+</footer>
+
+<script src="script.js"></script>
+</body>
+</html>  font-weight: 500;
   letter-spacing: 0.02em;
   opacity: 0.8;
   transition: opacity 0.2s ease;
