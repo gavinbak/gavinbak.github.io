@@ -183,6 +183,7 @@ a { color: inherit; }
   width: 100%;
   aspect-ratio: 4 / 5;
   object-fit: cover;
+  object-position: 30% 20%
   border-radius: 12px;
   border: 1px solid var(--rule);
   filter: grayscale(0.15) contrast(1.05);
