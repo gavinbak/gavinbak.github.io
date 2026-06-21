@@ -1,201 +1,382 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Gavin Block — Mechanical Engineer</title>
-<meta name="description" content="Gavin Block — Mechanical Engineer. HVAC design, mechanical design, and hands-on builds.">
-<link rel="preconnect" href="https://fonts.googleapis.com">
-<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800;900&family=Source+Serif+4:opsz,wght@8..60,400;8..60,500&display=swap" rel="stylesheet">
-<link rel="stylesheet" href="style.css">
-<script type="module" src="https://ajax.googleapis.com/ajax/libs/model-viewer/4.0.0/model-viewer.min.js"></script>
-</head>
-<body>
+/* ===== Tokens ===== */
+:root {
+  --bg: #0a0a0a;
+  --bg-raised: #121212;
+  --text: #f5f5f0;
+  --text-dim: #9a9a94;
+  --accent: #5b7c99;
+  --rule: rgba(245, 245, 240, 0.1);
+  --display: "Inter", -apple-system, sans-serif;
+  --body: "Source Serif 4", Georgia, serif;
+  --mono: "Inter", sans-serif;
+}
 
-<nav class="nav" id="nav">
-  <a href="#top" class="nav__name">GB</a>
-  <div class="nav__links">
-    <a href="#about">About</a>
-    <a href="#work">Work</a>
-    <a href="#builds">Builds</a>
-    <a href="#contact">Contact</a>
-  </div>
-</nav>
+* { margin: 0; padding: 0; box-sizing: border-box; }
 
-<!-- HERO -->
-<header class="hero" id="top">
-  <div class="hero__eyebrow">Rochester, NY → Anchorage, AK · July 2026</div>
-  <h1 class="hero__name">Gavin Block</h1>
-  <p class="hero__role">Mechanical Engineer</p>
-  <p class="hero__tagline">I design the systems that move air, hold shape, and survive winters that try to kill them.</p>
-  <a href="#work" class="hero__scroll" aria-label="Scroll to work">
-    <span></span>
-  </a>
-</header>
+html { scroll-behavior: smooth; }
 
-<!-- ABOUT -->
-<section class="about" id="about">
-  <div class="about__inner">
-    <p class="about__kicker">About</p>
-    <p class="about__lead">
-      I'm a mechanical engineer currently designing HVAC systems for K-12 schools at LaBella Associates
-      in Rochester, NY — load calcs, equipment selection, ductwork, and the unglamorous work of keeping
-      buildings comfortable and code-compliant.
-    </p>
-    <p class="about__body">
-      I grew up in Alaska, and I'm moving back to Anchorage permanently in July 2026. I interned with
-      CRW Engineering Group there, and I'm looking for the next place to put real design work into the
-      built environment I grew up in.
-    </p>
-    <p class="about__body">
-      Outside of work I build things that don't need a stamp of approval: CAD-designed hardware,
-      a self-hosted media server, a car infotainment system built from a Raspberry Pi and an OBD2
-      dongle, and a robot that draws on an Etch A Sketch.
-    </p>
-    <div class="about__tools">
-      <span>Revit</span><span>AutoCAD MEP</span><span>Carrier HAP</span><span>Trane TRACE</span>
-      <span>Fusion 360</span><span>Python</span>
-    </div>
-  </div>
-</section>
+body {
+  background: var(--bg);
+  color: var(--text);
+  font-family: var(--body);
+  line-height: 1.6;
+  -webkit-font-smoothing: antialiased;
+}
 
-<!-- WORK / PROJECTS -->
-<section class="work" id="work">
+a { color: inherit; }
 
-  <article class="project">
-    <div class="project__viewer">
-      <model-viewer
-        src="/_pages/test.glb"
-        environment-image="/_pages/aircraft_workshop_01_1k.hdr"
-        alt="Modular Hydroponic Tower CAD model"
-        camera-controls
-        touch-action="pan-y"
-        shadow-intensity="1"
-        auto-rotate
-        auto-rotate-delay="2000">
-      </model-viewer>
-    </div>
-    <div class="project__text">
-      <p class="project__index">01</p>
-      <h2>Modular Hydroponic Tower</h2>
-      <p class="project__desc">
-        A stackable, vertical growing system designed to maximize plant density per square foot
-        of footprint. Each module nests onto the one below it, so the tower scales up without
-        redesigning the base. <!-- TODO: Gavin — fill in real specifics: materials, irrigation method, why you built it --></p>
-      <p class="project__meta">Fusion 360 · 3D printed</p>
-    </div>
-  </article>
+:focus-visible {
+  outline: 2px solid var(--accent);
+  outline-offset: 4px;
+}
 
-  <article class="project project--reverse">
-    <div class="project__viewer">
-      <model-viewer
-        src="/_pages/lamp1.glb"
-        environment-image="/_pages/aircraft_workshop_01_1k.hdr"
-        alt="Articulating Lamp CAD model"
-        camera-controls
-        touch-action="pan-y"
-        shadow-intensity="1"
-        auto-rotate
-        auto-rotate-delay="2000">
-      </model-viewer>
-    </div>
-    <div class="project__text">
-      <p class="project__index">02</p>
-      <h2>Articulating Lamp</h2>
-      <p class="project__desc">
-        A desk lamp built around a friction-jointed arm that holds any pose without a locking
-        mechanism. The design problem was entirely in the joints — getting enough resistance to
-        hold position under the lamp head's weight without making the arm stiff to move.
-        <!-- TODO: Gavin — fill in real specifics: joint mechanism, materials, design iterations --></p>
-      <p class="project__meta">Fusion 360 · 3D printed</p>
-    </div>
-  </article>
+@media (prefers-reduced-motion: reduce) {
+  * { animation: none !important; transition: none !important; scroll-behavior: auto !important; }
+}
 
-  <article class="project">
-    <div class="project__viewer">
-      <model-viewer
-        src="/_pages/beercancooler.glb"
-        environment-image="/_pages/aircraft_workshop_01_1k.hdr"
-        alt="Rapid Drink Can Cooler CAD model"
-        camera-controls
-        touch-action="pan-y"
-        shadow-intensity="1"
-        auto-rotate
-        auto-rotate-delay="2000">
-      </model-viewer>
-    </div>
-    <div class="project__text">
-      <p class="project__index">03</p>
-      <h2>Rapid Drink Can Cooler</h2>
-      <p class="project__desc">
-        A mechanical answer to a warm drink: a device built to pull heat out of a can far faster
-        than a refrigerator or ice bath. <!-- TODO: Gavin — fill in real specifics: how it actually
-        cools, what made it "rapid," what you'd change next time --></p>
-      <p class="project__meta">Fusion 360 · 3D printed</p>
-    </div>
-  </article>
+/* ===== Nav ===== */
+.nav {
+  position: fixed;
+  top: 0; left: 0; right: 0;
+  z-index: 100;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 28px 48px;
+  font-family: var(--display);
+  mix-blend-mode: difference;
+}
 
-</section>
+.nav__name {
+  font-weight: 800;
+  font-size: 1.1rem;
+  text-decoration: none;
+  letter-spacing: -0.02em;
+}
 
-<!-- BUILDS / MAKER PROJECTS -->
-<section class="builds" id="builds">
-  <p class="builds__kicker">Also building</p>
-  <div class="builds__grid">
+.nav__links {
+  display: flex;
+  gap: 32px;
+}
 
-    <div class="build">
-      <p class="build__index">04</p>
-      <h3>Etch A Sketch Robot</h3>
-      <p>
-        A two-axis CNC built from NEMA 17 steppers and GRBL firmware that draws any image onto a
-        real Etch A Sketch. The hard part wasn't the hardware — it was the pathfinding: routing the
-        pen through every dark pixel without ever crossing open space, since there's no way to
-        "lift the pen" on a real Etch A Sketch.
-      </p>
-      <p class="build__meta">Arduino · GRBL · Python · PyQt6</p>
-    </div>
+.nav__links a {
+  text-decoration: none;
+  font-size: 0.85rem;
+  font-weight: 500;
+  letter-spacing: 0.02em;
+  opacity: 0.8;
+  transition: opacity 0.2s ease;
+}
 
-    <div class="build">
-      <p class="build__index">05</p>
-      <h3>Self-Hosted Music Server</h3>
-      <p>
-        A Raspberry Pi running Jellyfin over a personal music library, accessible from anywhere
-        over Tailscale. Built a small FastAPI tool on top to search and pull new tracks straight
-        into the library from the phone.
-      </p>
-      <p class="build__meta">Raspberry Pi · Docker · Jellyfin</p>
-    </div>
+.nav__links a:hover { opacity: 1; }
 
-    <div class="build">
-      <p class="build__index">06</p>
-      <h3>Car Infotainment Pi</h3>
-      <p>
-        A Raspberry Pi mounted in the dash reading live engine data over Bluetooth from an OBD2
-        dongle, with a touchscreen kiosk interface for music and vehicle stats.
-      </p>
-      <p class="build__meta">Raspberry Pi · BlueZ · WebSockets</p>
-    </div>
+/* ===== Hero ===== */
+.hero {
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: flex-start;
+  padding: 0 48px;
+  position: relative;
+}
 
-  </div>
-</section>
+.hero__eyebrow {
+  font-family: var(--display);
+  font-size: 0.8rem;
+  font-weight: 600;
+  letter-spacing: 0.06em;
+  text-transform: uppercase;
+  color: var(--accent);
+  margin-bottom: 28px;
+  opacity: 0;
+  animation: rise 0.8s ease forwards;
+  animation-delay: 0.1s;
+}
 
-<!-- CONTACT -->
-<section class="contact" id="contact">
-  <p class="contact__kicker">Get in touch</p>
-  <h2 class="contact__headline">Moving to Anchorage.<br>Looking for the right team.</h2>
-  <div class="contact__links">
-    <a href="mailto:gavin.blockk@gmail.com" class="contact__primary">gavin.blockk@gmail.com</a>
-  </div>
-  <div class="contact__secondary">
-    <!-- TODO: Gavin — add LinkedIn, resume PDF link, GitHub if you want them here -->
-    <a href="/resume.pdf">Resume</a>
-  </div>
-</section>
+.hero__name {
+  font-family: var(--display);
+  font-weight: 700;
+  font-size: clamp(3.5rem, 12vw, 9rem);
+  line-height: 0.95;
+  letter-spacing: -0.02em;
+  opacity: 0;
+  animation: rise 0.9s ease forwards;
+  animation-delay: 0.1s;
+}
 
-<footer class="footer">
-  <p>&copy; 2026 Gavin Block</p>
-</footer>
+.hero__role {
+  font-family: var(--display);
+  font-weight: 500;
+  font-size: clamp(1.1rem, 2.5vw, 1.6rem);
+  color: var(--text-dim);
+  margin-top: 16px;
+  opacity: 0;
+  animation: rise 0.9s ease forwards;
+  animation-delay: 0.25s;
+}
 
-<script src="script.js"></script>
-</body>
-</html>
+@keyframes rise {
+  from { opacity: 0; transform: translateY(18px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+
+.hero__scroll {
+  position: absolute;
+  bottom: 48px;
+  left: 48px;
+  width: 1px;
+  height: 60px;
+  background: var(--rule);
+  overflow: hidden;
+}
+
+.hero__scroll span {
+  position: absolute;
+  top: -100%;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: var(--accent);
+  animation: scrollLine 2s ease-in-out infinite;
+}
+
+@keyframes scrollLine {
+  0% { top: -100%; }
+  60% { top: 100%; }
+  100% { top: 100%; }
+}
+
+/* ===== About ===== */
+.about {
+  padding: 160px 48px;
+  border-top: 1px solid var(--rule);
+}
+
+.about__inner {
+  max-width: 720px;
+  margin: 0 auto;
+}
+
+.about__kicker {
+  font-family: var(--display);
+  font-size: 0.8rem;
+  font-weight: 600;
+  letter-spacing: 0.06em;
+  text-transform: uppercase;
+  color: var(--accent);
+  margin-bottom: 24px;
+}
+
+.about__lead {
+  font-size: clamp(1.4rem, 2.6vw, 1.9rem);
+  font-weight: 400;
+  line-height: 1.45;
+  margin-bottom: 28px;
+}
+
+.about__body {
+  font-size: 1.05rem;
+  color: var(--text-dim);
+  margin-bottom: 18px;
+  max-width: 600px;
+}
+
+.about__tools {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 10px;
+  margin-top: 36px;
+}
+
+.about__tools span {
+  font-family: var(--display);
+  font-size: 0.8rem;
+  font-weight: 500;
+  padding: 8px 14px;
+  border: 1px solid var(--rule);
+  border-radius: 100px;
+  color: var(--text-dim);
+}
+
+/* ===== Work / Projects ===== */
+.work {
+  border-top: 1px solid var(--rule);
+}
+
+.project {
+  display: grid;
+  grid-template-columns: 1.1fr 1fr;
+  align-items: center;
+  gap: 64px;
+  padding: 100px 48px;
+  border-bottom: 1px solid var(--rule);
+  opacity: 0;
+  transform: translateY(40px);
+  transition: opacity 0.8s ease, transform 0.8s ease;
+}
+
+.project.in-view {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+.project--reverse {
+  direction: rtl;
+}
+
+.project--reverse .project__text,
+.project--reverse .project__viewer {
+  direction: ltr;
+}
+
+.project__viewer {
+  width: 100%;
+  aspect-ratio: 1 / 1;
+  background: var(--bg-raised);
+  border-radius: 12px;
+  overflow: hidden;
+}
+
+.project__viewer model-viewer {
+  width: 100%;
+  height: 100%;
+}
+
+.project__index {
+  font-family: var(--display);
+  font-size: 0.85rem;
+  font-weight: 700;
+  color: var(--accent);
+  letter-spacing: 0.05em;
+  margin-bottom: 16px;
+}
+
+.project__text h2 {
+  font-family: var(--display);
+  font-weight: 600;
+  font-size: clamp(1.8rem, 3.5vw, 2.6rem);
+  letter-spacing: -0.01em;
+  margin-bottom: 20px;
+}
+
+.project__desc {
+  font-size: 1.05rem;
+  color: var(--text-dim);
+  max-width: 460px;
+  margin-bottom: 20px;
+}
+
+.project__meta {
+  font-family: var(--display);
+  font-size: 0.8rem;
+  font-weight: 500;
+  color: var(--accent);
+  letter-spacing: 0.02em;
+}
+
+/* ===== Builds ===== */
+.builds {
+  padding: 140px 48px;
+  border-top: 1px solid var(--rule);
+}
+
+.builds__kicker {
+  font-family: var(--display);
+  font-size: 0.8rem;
+  font-weight: 600;
+  letter-spacing: 0.06em;
+  text-transform: uppercase;
+  color: var(--accent);
+  margin-bottom: 48px;
+  text-align: center;
+}
+
+.builds__grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 48px;
+  max-width: 1200px;
+  margin: 0 auto;
+}
+
+.build {
+  opacity: 0;
+  transform: translateY(30px);
+  transition: opacity 0.7s ease, transform 0.7s ease;
+}
+
+.build.in-view { opacity: 1; transform: translateY(0); }
+
+.build__index {
+  font-family: var(--display);
+  font-size: 0.8rem;
+  font-weight: 700;
+  color: var(--accent);
+  margin-bottom: 14px;
+}
+
+.build h3 {
+  font-family: var(--display);
+  font-weight: 700;
+  font-size: 1.3rem;
+  margin-bottom: 14px;
+  letter-spacing: -0.01em;
+}
+
+.build p {
+  font-size: 0.95rem;
+  color: var(--text-dim);
+  margin-bottom: 16px;
+}
+
+.build__meta {
+  font-family: var(--display);
+  font-size: 0.75rem;
+  font-weight: 500;
+  color: var(--text-dim);
+  opacity: 0.7;
+  letter-spacing: 0.02em;
+}
+
+/* ===== Footer ===== */
+.footer {
+  padding: 64px 48px 32px;
+  text-align: center;
+  font-family: var(--display);
+  border-top: 1px solid var(--rule);
+}
+
+.footer__links {
+  display: flex;
+  justify-content: center;
+  gap: 24px;
+  margin-bottom: 16px;
+}
+
+.footer__links a {
+  font-size: 0.9rem;
+  font-weight: 500;
+  color: var(--text-dim);
+  text-decoration: none;
+  border-bottom: 1px solid var(--rule);
+}
+
+.footer p {
+  font-size: 0.8rem;
+  color: var(--text-dim);
+}
+
+/* ===== Responsive ===== */
+@media (max-width: 900px) {
+  .nav { padding: 20px 24px; }
+  .nav__links { gap: 18px; }
+  .hero, .about, .work, .builds, .contact { padding-left: 24px; padding-right: 24px; }
+  .project {
+    grid-template-columns: 1fr;
+    gap: 32px;
+    padding: 64px 24px;
+  }
+  .project--reverse { direction: ltr; }
+  .builds__grid { grid-template-columns: 1fr; gap: 56px; }
+}
