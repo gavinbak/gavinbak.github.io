@@ -183,7 +183,7 @@ a { color: inherit; }
   width: 100%;
   aspect-ratio: 4 / 5;
   object-fit: cover;
-  object-position: 30% center; /* shift crop left so it centers on you, not the brick */
+  object-position: 40% center; /* shift crop left so it centers on you, not the brick */
   border-radius: 12px;
   border: 1px solid var(--rule);
   filter: grayscale(0.15) contrast(1.05);
