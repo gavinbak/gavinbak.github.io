@@ -83,6 +83,13 @@ a { color: inherit; }
   align-items: flex-start;
   padding: 0 48px;
   position: relative;
+
+  background-image:
+    linear-gradient(180deg, rgba(10,10,10,0.55) 0%, rgba(10,10,10,0.75) 55%, rgba(10,10,10,0.95) 100%),
+    url("chugach-hero.jpg");
+  background-size: cover;
+  background-position: center 60%;
+  background-repeat: no-repeat;
 }
 
 .hero__eyebrow {
@@ -183,7 +190,7 @@ a { color: inherit; }
   width: 100%;
   aspect-ratio: 4 / 5;
   object-fit: cover;
-  object-position: 40% center; /* shift crop left so it centers on you, not the brick */
+  object-position: 40% center;
   border-radius: 12px;
   border: 1px solid var(--rule);
   filter: grayscale(0.15) contrast(1.05);
