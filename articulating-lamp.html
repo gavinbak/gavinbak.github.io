@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Articulating Lamp — Gavin Block</title>
+<meta name="description" content="Articulating Lamp — a project by Gavin Block.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800;900&family=Source+Serif+4:opsz,wght@8..60,400;8..60,500&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="style.css">
+<script type="module" src="https://ajax.googleapis.com/ajax/libs/model-viewer/4.0.0/model-viewer.min.js"></script>
+</head>
+<body>
+
+<nav class="nav" id="nav">
+  <a href="index.html#top" class="nav__name">GB</a>
+  <div class="nav__links">
+    <a href="index.html#about">About</a>
+    <a href="index.html#work">Work</a>
+    <a href="index.html#builds">Builds</a>
+  </div>
+</nav>
+
+<section class="detail-hero">
+  <a href="index.html#work" class="detail-hero__back">&larr; Back to all projects</a>
+  <p class="detail-hero__index">02</p>
+  <h1 class="detail-hero__title">Articulating Lamp</h1>
+  <p class="detail-hero__meta">Fusion 360 · 3D printed</p>
+</section>
+
+<div class="detail-hero">
+  <div class="detail-viewer">
+    <model-viewer
+      src="lamp1.glb"
+      environment-image="aircraft_workshop_01_1k.hdr"
+      alt="Articulating Lamp CAD model"
+      camera-controls
+      touch-action="pan-y"
+      shadow-intensity="1"
+      auto-rotate
+      auto-rotate-delay="2000">
+    </model-viewer>
+  </div>
+</div>
+
+<div class="detail-content">
+
+  <div class="detail-section">
+    <p class="detail-section__label">Overview</p>
+    <h2>What it is</h2>
+    <p>
+      A desk lamp built around a friction-jointed arm that holds any pose without a locking mechanism.
+      <!-- TODO: Gavin — expand on this. What problem were you solving, and what made you decide to build this instead of buying something? --></p>
+  </div>
+
+  <div class="detail-section">
+    <p class="detail-section__label">The Problem</p>
+    <h2>The hard part</h2>
+    <p>
+      <!-- TODO: Gavin — what was the actual engineering challenge here? What didn't work the first time? --></p>
+  </div>
+
+  <div class="detail-section">
+    <p class="detail-section__label">Design &amp; Build</p>
+    <h2>How it came together</h2>
+    <p>
+      <!-- TODO: Gavin — materials, tools, manufacturing process, design iterations, anything you'd want a fellow maker to know about how this was actually built. --></p>
+  </div>
+
+  <div class="detail-section">
+    <p class="detail-section__label">Specs</p>
+    <h2>Details</h2>
+    <p>
+      <!-- TODO: Gavin — dimensions, materials list, key components, software/firmware versions, whatever's relevant. --></p>
+  </div>
+
+  <div class="detail-section">
+    <p class="detail-section__label">Next Time</p>
+    <h2>What I'd change</h2>
+    <p>
+      <!-- TODO: Gavin — what would you do differently on a v2? --></p>
+  </div>
+
+</div>
+
+<footer class="footer">
+  <div class="footer__links">
+    <a href="mailto:gavin.blockk@gmail.com">gavin.blockk@gmail.com</a>
+    <a href="/resume.pdf">Resume</a>
+  </div>
+  <p>&copy; 2026 Gavin Block</p>
+</footer>
+
+</body>
+</html>
